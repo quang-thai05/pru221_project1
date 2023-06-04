@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.SaveLoad;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,11 @@ public class CurrencySystem : Singleton<CurrencySystem>
     {
         PlayerPrefs.DeleteKey(CURRENCY_SAVE_KEY);
         LoadCoins();
+        if(PropertiesApplication.TotalCoins != -10)
+        {
+            TotalCoins = PropertiesApplication.TotalCoins;
+            PropertiesApplication.TotalCoins = -10;
+        }
     }
 
     private void LoadCoins()

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class Enemy : MonoBehaviour
 {
@@ -18,6 +19,9 @@ public class Enemy : MonoBehaviour
     /// The waypoint reference
     /// </summary>
     public Waypoint Waypoint { get; set; }
+
+    public int InitIndex { get; set; } = 0;
+    public int CurrentWaypointIndex() { return _currentWaypointIndex; }
 
     public EnemyHealth EnemyHealth { get; set; }
 
@@ -39,6 +43,11 @@ public class Enemy : MonoBehaviour
         EnemyHealth = GetComponent<EnemyHealth>();
 
         _currentWaypointIndex = 0;
+        if(InitIndex != 0)
+        {
+            _currentWaypointIndex = InitIndex;
+            InitIndex = 0;
+        }
         MoveSpeed = moveSpeed;
         _lastPointPosition = transform.position;
     }

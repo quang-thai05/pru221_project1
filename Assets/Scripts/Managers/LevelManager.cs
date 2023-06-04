@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.Scripts.SaveLoad;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,12 @@ public class LevelManager : Singleton<LevelManager>
     {
         TotalLives = lives;
         CurrentWave = 1;
+        if(PropertiesApplication.TotalLives != -10)
+        {
+            TotalLives = PropertiesApplication.TotalLives;
+            CurrentWave = PropertiesApplication.currentWave;
+            PropertiesApplication.TotalLives = -10;
+        }
     }
 
     private void ReduceLives(Enemy enemy)

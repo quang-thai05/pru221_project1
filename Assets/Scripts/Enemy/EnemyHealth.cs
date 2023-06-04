@@ -16,7 +16,8 @@ public class EnemyHealth : MonoBehaviour
     [SerializeField] private float maxHealth = 10f;
 
     public float CurrentHealth { get; set; }
-    
+    public float InitFileHelCur { get; set; } = 0;
+
     private Image _healthBar;
     private Enemy _enemy;
     
@@ -24,7 +25,11 @@ public class EnemyHealth : MonoBehaviour
     {
         CreateHealthBar();
         CurrentHealth = initialHealth;
-
+        if(InitFileHelCur != 0)
+        {
+            CurrentHealth = InitFileHelCur;
+            InitFileHelCur = 0;
+        }
         _enemy = GetComponent<Enemy>();
     }
 
