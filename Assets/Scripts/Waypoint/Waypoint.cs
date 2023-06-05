@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Waypoint : MonoBehaviour
 {
@@ -9,10 +6,10 @@ public class Waypoint : MonoBehaviour
 
     public Vector3[] Points => points;
     public Vector3 CurrentPosition => _currentPosition;
-    
+
     private Vector3 _currentPosition;
     private bool _gameStarted;
-    
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -31,7 +28,7 @@ public class Waypoint : MonoBehaviour
         {
             _currentPosition = transform.position;
         }
-        
+
         for (int i = 0; i < points.Length; i++)
         {
             Gizmos.color = Color.green;
