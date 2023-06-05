@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MachineTurretProjectile : TurretProjectile
 {
     [SerializeField] private bool isDualMachine;
     [SerializeField] private float spreadRange;
-    
+
     protected override void Update()
     {
         if (Time.time > _nextAttackTime)
@@ -16,12 +14,13 @@ public class MachineTurretProjectile : TurretProjectile
                 Vector3 dirToTarget = _turret.CurrentEnemyTarget.transform.position - transform.position;
                 FireProjectile(dirToTarget);
             }
-            
+
             _nextAttackTime = Time.time + delayBtwAttacks;
         }
     }
 
-    protected override void LoadProjectile() { }
+    protected override void LoadProjectile()
+    { }
 
     private void FireProjectile(Vector3 direction)
     {
@@ -40,7 +39,7 @@ public class MachineTurretProjectile : TurretProjectile
             Vector2 newDirection = spreadValue * direction;
             projectile.Direction = newDirection;
         }
-        
+
         instance.SetActive(true);
     }
 }
