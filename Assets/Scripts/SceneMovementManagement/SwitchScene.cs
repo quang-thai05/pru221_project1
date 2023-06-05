@@ -6,19 +6,42 @@ using UnityEngine.SceneManagement;
 public class SwitchScene : MonoBehaviour
 {
     private string maingame = "GameScene";
-    private string pausescene = "PauseScene";
     private string mainmenu = "MainMenu";
+    [Header("Panels")]
+    [SerializeField] private GameObject pausepanel;
+
+    public void Start()
+    {
+        pausepanel.SetActive(false);
+    }
 
     public void SwitchtoMainGame()
     {
-      SceneManager.LoadScene(maingame);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(maingame);
     }
     public void SwitchtoPause()
     {
-        SceneManager.LoadScene(pausescene);
+        Time.timeScale = 0f;
+        pausepanel.SetActive(true);
     }
     public void SwitchtoMainMenu()
     {
         SceneManager.LoadScene(mainmenu);
+    }
+    public void BackToGame()
+    {
+        Time.timeScale = 1f;
+        pausepanel.SetActive(false);
+    }
+    public void SaveGames()
+    {
+        SaveLoad.SaveGame();
+    }
+    public void LoadGames()
+    {
+        Time.timeScale = 1f;
+        SaveLoad.LoadGame();
+        SceneManager.LoadScene(maingame);
     }
 }
