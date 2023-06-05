@@ -48,12 +48,14 @@ public class UIManager : Singleton<UIManager>
 
     public void ShowGameOverPanel()
     {
+        Time.timeScale = 0f;
         gameOverPanel.SetActive(true);
         gameOverTotalCoinsText.text = CurrencySystem.Instance.TotalCoins.ToString();
     }
 
     public void RestartGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
