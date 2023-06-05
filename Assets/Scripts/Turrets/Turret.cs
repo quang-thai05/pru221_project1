@@ -7,18 +7,17 @@ public class Turret : MonoBehaviour
 {
     [SerializeField] private float attackRange = 3f;
 
+    public string NameTypePrefab { get; set; }
     public Enemy CurrentEnemyTarget { get; set; }
     public TurretUpgrade TurretUpgrade { get; set; }
     public float AttackRange => attackRange;
     
     private bool _gameStarted;
-    private List<Enemy> _enemies;
+    private List<Enemy> _enemies = new List<Enemy>();
 
     private void Start()
     {
         _gameStarted = true;
-        _enemies = new List<Enemy>();
-
         TurretUpgrade = GetComponent<TurretUpgrade>();
     }
 

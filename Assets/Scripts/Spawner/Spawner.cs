@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Assets.Scripts.SaveLoad;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.EventSystems.EventTrigger;
 using Random = UnityEngine.Random;
 
 public enum SpawnModes
@@ -32,7 +34,10 @@ public class Spawner : MonoBehaviour
     [SerializeField] private ObjectPooler enemyWave21To30Pooler;
     [SerializeField] private ObjectPooler enemyWave31To40Pooler;
     [SerializeField] private ObjectPooler enemyWave41To50Pooler;
-    
+
+    public int EnemySpawned() { return _enemiesSpawned; }
+    public int EnemyRemain() { return _enemiesRamaining; }
+
     private float _spawnTimer;
     private int _enemiesSpawned;
     private int _enemiesRamaining;
@@ -44,6 +49,32 @@ public class Spawner : MonoBehaviour
         _waypoint = GetComponent<Waypoint>();
 
         _enemiesRamaining = enemyCount;
+
+        if (PropertiesApplication.RequestLoadEnemy)
+        {
+            foreach(var enemy in PropertiesApplication.enemyProperties)
+            {
+                GameObject newInstance = GetPooler().GetInstanceFromPool();
+                Enemy enemy1 = newInstance.GetComponent<Enemy>();
+                enemy1.ResetEnemy();
+                EnemyHealth health = enemy1.GetComponent<EnemyHealth>();
+
+                health.InitFileHelCur = enemy.healthCur;
+                enemy1.InitIndex = enemy.CurrentWaypointIndex;
+                enemy1.Waypoint = _waypoint;
+
+                enemy1.transform.localPosition = transform.position;
+
+                newInstance.transform.position = new Vector2(enemy.posx, enemy.posy);
+                newInstance.SetActive(true);
+
+                _enemiesSpawned = PropertiesApplication.enemiesSpawned;
+                _enemiesRamaining = PropertiesApplication.enemiesRemain;
+
+                _enemiesSpawned++;
+            }
+            PropertiesApplication.RequestLoadEnemy = false;
+        }
     }
 
     private void Update()
@@ -64,8 +95,8 @@ public class Spawner : MonoBehaviour
     {
         GameObject newInstance = GetPooler().GetInstanceFromPool();
         Enemy enemy = newInstance.GetComponent<Enemy>();
-        enemy.Waypoint = _waypoint;
         enemy.ResetEnemy();
+        enemy.Waypoint = _waypoint;
 
         enemy.transform.localPosition = transform.position;
         newInstance.SetActive(true);

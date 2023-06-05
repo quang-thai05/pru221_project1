@@ -514,6 +514,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Node (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8012699402918397846, guid: 2d794560b569ced4fadefbd4b435f51a, type: 3}
+      propertyPath: m_TagString
+      value: node3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1717,7 +1721,7 @@ GameObject:
   - component: {fileID: 705719144}
   m_Layer: 0
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: spawner
   m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1773,21 +1777,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   points:
-  - {x: 0.13044423, y: -1.0829287, z: 0}
-  - {x: 0.13812822, y: -9.910488, z: 0}
-  - {x: -5.8938, y: -9.942388, z: 0}
-  - {x: -5.880576, y: -7.7612643, z: 0}
-  - {x: -9.792126, y: -7.8092613, z: 0}
-  - {x: -9.791231, y: -16.836039, z: 0}
-  - {x: -3.8027072, y: -16.806513, z: 0}
-  - {x: -3.8331852, y: -13.666683, z: 0}
-  - {x: 1.1611199, y: -13.695865, z: 0}
-  - {x: 1.1744637, y: -17.958803, z: 0}
-  - {x: 6.0762463, y: -17.952642, z: 0}
-  - {x: 6.07595, y: -7.796041, z: 0}
-  - {x: 10.134081, y: -7.774673, z: 0}
-  - {x: 10.13319, y: -12.776457, z: 0}
-  - {x: 17.565413, y: -12.782532, z: 0}
+  - {x: 0.28461826, y: -1.9989805, z: 0}
+  - {x: 0.28564155, y: -10.040357, z: 0}
+  - {x: -5.656041, y: -10.061266, z: 0}
+  - {x: -5.6428175, y: -7.840518, z: 0}
+  - {x: -9.752499, y: -7.8092613, z: 0}
+  - {x: -9.767054, y: -16.875666, z: 0}
+  - {x: -3.8027072, y: -16.84614, z: 0}
+  - {x: -3.7687697, y: -13.87721, z: 0}
+  - {x: 1.3468554, y: -13.905781, z: 0}
+  - {x: 1.3583677, y: -18.011435, z: 0}
+  - {x: 6.274379, y: -17.992268, z: 0}
+  - {x: 6.285254, y: -7.8356657, z: 0}
+  - {x: 10.37184, y: -7.8142986, z: 0}
+  - {x: 10.370948, y: -12.855709, z: 0}
+  - {x: 17.525784, y: -12.861785, z: 0}
 --- !u!1 &740092906
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,6 +1927,10 @@ PrefabInstance:
     - target: {fileID: 8012699402918397846, guid: 2d794560b569ced4fadefbd4b435f51a, type: 3}
       propertyPath: m_Name
       value: Node (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012699402918397846, guid: 2d794560b569ced4fadefbd4b435f51a, type: 3}
+      propertyPath: m_TagString
+      value: node6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2932,6 +2940,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Node (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8012699402918397846, guid: 2d794560b569ced4fadefbd4b435f51a, type: 3}
+      propertyPath: m_TagString
+      value: node4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3204,6 +3216,10 @@ PrefabInstance:
     - target: {fileID: 8012699402918397846, guid: 2d794560b569ced4fadefbd4b435f51a, type: 3}
       propertyPath: m_Name
       value: Node (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012699402918397846, guid: 2d794560b569ced4fadefbd4b435f51a, type: 3}
+      propertyPath: m_TagString
+      value: node5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3806,7 +3822,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1515828243}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.16, y: -0.16, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13077,6 +13093,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Node (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8012699402918397846, guid: 2d794560b569ced4fadefbd4b435f51a, type: 3}
+      propertyPath: m_TagString
+      value: node2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13316,6 +13336,10 @@ PrefabInstance:
     - target: {fileID: 8012699402918397846, guid: 2d794560b569ced4fadefbd4b435f51a, type: 3}
       propertyPath: m_Name
       value: Node
+      objectReference: {fileID: 0}
+    - target: {fileID: 8012699402918397846, guid: 2d794560b569ced4fadefbd4b435f51a, type: 3}
+      propertyPath: m_TagString
+      value: node1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
