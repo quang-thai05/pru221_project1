@@ -21,7 +21,8 @@ public class MachineTurretProjectile : TurretProjectile
 
     protected override void LoadProjectile()
     { }
-
+    public AudioSource shot;
+    public AudioClip shotdame;
     private void FireProjectile(Vector3 direction)
     {
         GameObject instance = _pooler.GetInstanceFromPool();
@@ -30,6 +31,7 @@ public class MachineTurretProjectile : TurretProjectile
         MachineProjectile projectile = instance.GetComponent<MachineProjectile>();
         projectile.Direction = direction;
         projectile.Damage = Damage;
+        shot.PlayOneShot(shotdame);
 
         if (isDualMachine)
         {
