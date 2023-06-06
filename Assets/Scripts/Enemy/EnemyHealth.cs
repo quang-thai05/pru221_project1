@@ -52,13 +52,15 @@ public class EnemyHealth : MonoBehaviour
         EnemyHealthContainer container = newBar.GetComponent<EnemyHealthContainer>();
         _healthBar = container.FillAmountImage;
     }
-
+    public AudioSource dealdamege;
+    public AudioClip death;
     public void DealDamage(float damageReceived)
     {
         CurrentHealth -= damageReceived;
         if (CurrentHealth <= 0)
         {
             CurrentHealth = 0;
+            dealdamege.PlayOneShot(death);
             Die();
         }
         else

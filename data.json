@@ -1,1 +1,1 @@
-{"enemyProperties":[{"CurrentWaypointIndex":1,"NameType":"Enemy_red(Clone)","posx":-0.385854423,"posy":3.17049623,"healthCur":10.0}],"turretProperties":[],"TotalCoins":50,"currentWave":1,"TotalLives":1,"enemiesSpawned":1,"enemiesRemain":1}
+{"enemyProperties":[],"turretProperties":[{"Node":4,"TypeTurret":"Single_machine_turret ","SellPerc":0.5,"UpgradeCost":0,"Level":1,"Damage":2.0,"DelayPerShot":0.2}],"TotalCoins":29,"currentWave":10,"TotalLives":1,"enemiesSpawned":1,"enemiesRemain":0}
