@@ -24,10 +24,13 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    public AudioSource shotdmg;
+    public AudioClip shotdamaged;
     protected virtual void MoveProjectile()
     {
         transform.position = Vector2.MoveTowards(transform.position, 
             _enemyTarget.transform.position, moveSpeed * Time.deltaTime);
+        shotdmg.PlayOneShot(shotdamaged);
         float distanceToTarget = (_enemyTarget.transform.position - transform.position).magnitude;
         if (distanceToTarget < minDistanceToDealDamage)
         {

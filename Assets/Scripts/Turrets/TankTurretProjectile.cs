@@ -20,6 +20,8 @@ public class TankTurretProjectile : TurretProjectile
 
     protected override void LoadProjectile() { }
 
+    public AudioSource shotting;
+    public AudioClip shottingdmg;
     private void FireProjectile(Enemy enemy)
     {
         GameObject instance = _pooler.GetInstanceFromPool();
@@ -31,6 +33,7 @@ public class TankTurretProjectile : TurretProjectile
         _currentProjectileLoaded.ResetProjectile();
         _currentProjectileLoaded.SetEnemy(enemy);
         _currentProjectileLoaded.Damage = Damage;
+        shotting.PlayOneShot(shottingdmg);
         instance.SetActive(true);
     }
 }
