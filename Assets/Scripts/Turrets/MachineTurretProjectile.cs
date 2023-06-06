@@ -21,8 +21,10 @@ public class MachineTurretProjectile : TurretProjectile
 
     protected override void LoadProjectile()
     { }
+
     public AudioSource shot;
     public AudioClip shotdame;
+
     private void FireProjectile(Vector3 direction)
     {
         GameObject instance = _pooler.GetInstanceFromPool();

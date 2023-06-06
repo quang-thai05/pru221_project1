@@ -214,10 +214,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 161f7167a3a0cbf4ebcc7d2e239d411f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeInitialCost: 0
-  upgradeCostIncremental: 0
-  damageIncremental: 0
-  delayReduce: 0
+  upgradeInitialCost: 25
+  upgradeCostIncremental: 10
+  damageIncremental: 3
+  delayReduce: 0.05
   sellPert: 0.5
 --- !u!82 &-7891008670437373632
 AudioSource:
