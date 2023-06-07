@@ -7,6 +7,7 @@ public class SwitchScene : MonoBehaviour
 {
     private string maingame = "GameScene";
     private string mainmenu = "MainMenu";
+    private string description = "AboutUsScene";
     [Header("Panels")]
     [SerializeField] private GameObject pausepanel;
 
@@ -33,6 +34,14 @@ public class SwitchScene : MonoBehaviour
     {
         Time.timeScale = 1f;
         pausepanel.SetActive(false);
+    }
+    public void SwitchtoDescription()
+    {
+        SceneManager.LoadScene(description);
+    }
+    public void CloseDescription()
+    {
+        SceneManager.LoadScene(mainmenu);
     }
     public void SaveGames()
     {
