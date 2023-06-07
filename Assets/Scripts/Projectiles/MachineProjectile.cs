@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MachineProjectile : Projectile
 {
     public Vector2 Direction { get; set; }
-    
+
     protected override void Update()
     {
         MoveProjectile();
@@ -28,7 +25,7 @@ public class MachineProjectile : Projectile
                 OnEnemyHit?.Invoke(enemy, Damage);
                 enemy.EnemyHealth.DealDamage(Damage);
             }
-            
+
             ObjectPooler.ReturnToPool(gameObject);
         }
     }

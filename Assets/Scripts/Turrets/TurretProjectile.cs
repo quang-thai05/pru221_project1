@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TurretProjectile : MonoBehaviour
 {
@@ -11,7 +8,7 @@ public class TurretProjectile : MonoBehaviour
 
     public float Damage { get; set; }
     public float DelayPerShot { get; set; }
-    
+
     protected float _nextAttackTime;
     protected ObjectPooler _pooler;
     protected Turret _turret;
@@ -47,7 +44,7 @@ public class TurretProjectile : MonoBehaviour
         }
     }
 
-    protected virtual  void LoadProjectile()
+    protected virtual void LoadProjectile()
     {
         GameObject newInstance = _pooler.GetInstanceFromPool();
         newInstance.transform.localPosition = projectileSpawnPosition.position;
@@ -64,7 +61,7 @@ public class TurretProjectile : MonoBehaviour
     {
         return _currentProjectileLoaded == null;
     }
-    
+
     public void ResetTurretProjectile()
     {
         _currentProjectileLoaded = null;
