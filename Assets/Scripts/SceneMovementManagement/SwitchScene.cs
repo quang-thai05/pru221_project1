@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class SwitchScene : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SwitchScene : MonoBehaviour
     private string description = "AboutUsScene";
     [Header("Panels")]
     [SerializeField] private GameObject pausepanel;
+   
 
     public void Start()
     {
@@ -53,4 +55,5 @@ public class SwitchScene : MonoBehaviour
         SaveLoad.LoadGame();
         SceneManager.LoadScene(maingame);
     }
+    
 }
