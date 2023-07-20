@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AchievementManager : Singleton<AchievementManager>
 {
     public static Action<Achievement> OnAchievementUnlocked;
     public static Action<Achievement> OnProgressUpdated;
-    
+
     [SerializeField] private AchievementCard achievementCardPrefab;
     [SerializeField] private Transform achievementPanelContainer;
     [SerializeField] private Achievement[] achievements;

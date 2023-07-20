@@ -1,8 +1,5 @@
 ﻿using Assets.Scripts.SaveLoad;
-using Newtonsoft.Json;
-using System.Collections;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using UnityEngine;
 
@@ -50,9 +47,10 @@ public class TurretShopManager : MonoBehaviour
                     node.SetTurret(turretPlaced);
                 }
             }
-        }catch(System.Exception ex)
+        }
+        catch (System.Exception ex)
         {
-         Debug.Log("an error happened while load game : error "+ex.Message);
+            Debug.Log("an error happened while load game : error " + ex.Message);
         }
         finally
         {
@@ -69,12 +67,12 @@ public class TurretShopManager : MonoBehaviour
         TurretCard cardButton = newInstance.GetComponent<TurretCard>();
         cardButton.SetupTurretButton(turretSettings);
     }
-    
+
     private void NodeSelected(Node nodeSelected)
     {
         _currentNodeSelected = nodeSelected;
     }
-    
+
     private void PlaceTurret(TurretSettings turretLoaded)
     {
         if (_currentNodeSelected != null)
@@ -93,7 +91,7 @@ public class TurretShopManager : MonoBehaviour
     {
         _currentNodeSelected = null;
     }
-    
+
     private void OnEnable()
     {
         Node.OnNodeSelected += NodeSelected;

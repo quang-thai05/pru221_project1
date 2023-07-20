@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,19 +6,21 @@ public class UIManager : Singleton<UIManager>
 {
     [Header("Panels")]
     [SerializeField] private GameObject turretShopPanel;
+
     [SerializeField] private GameObject nodeUIPanel;
     [SerializeField] private GameObject achievementPanel;
     [SerializeField] private GameObject gameOverPanel;
 
-    [Header("Text")] 
+    [Header("Text")]
     [SerializeField] private TextMeshProUGUI upgradeText;
+
     [SerializeField] private TextMeshProUGUI sellText;
     [SerializeField] private TextMeshProUGUI turretLevelText;
     [SerializeField] private TextMeshProUGUI totalCoinsText;
     [SerializeField] private TextMeshProUGUI lifesText;
     [SerializeField] private TextMeshProUGUI currentWaveText;
     [SerializeField] private TextMeshProUGUI gameOverTotalCoinsText;
-    
+
     private Node _currentNodeSelected;
 
     private void Update()
@@ -58,12 +57,12 @@ public class UIManager : Singleton<UIManager>
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    
+
     public void OpenAchievementPanel(bool status)
     {
         achievementPanel.SetActive(status);
     }
-    
+
     public void CloseTurretShopPanel()
     {
         turretShopPanel.SetActive(false);
@@ -74,7 +73,7 @@ public class UIManager : Singleton<UIManager>
         _currentNodeSelected.CloseAttackRangeSprite();
         nodeUIPanel.SetActive(false);
     }
-    
+
     public void UpgradeTurret()
     {
         _currentNodeSelected.Turret.TurretUpgrade.UpgradeTurret();
@@ -89,7 +88,7 @@ public class UIManager : Singleton<UIManager>
         _currentNodeSelected = null;
         nodeUIPanel.SetActive(false);
     }
-    
+
     private void ShowNodeUI()
     {
         nodeUIPanel.SetActive(true);
@@ -113,7 +112,7 @@ public class UIManager : Singleton<UIManager>
         int sellAmount = _currentNodeSelected.Turret.TurretUpgrade.GetSellValue();
         sellText.text = sellAmount.ToString();
     }
-    
+
     private void NodeSelected(Node nodeSelected)
     {
         _currentNodeSelected = nodeSelected;
@@ -126,7 +125,7 @@ public class UIManager : Singleton<UIManager>
             ShowNodeUI();
         }
     }
-    
+
     private void OnEnable()
     {
         Node.OnNodeSelected += NodeSelected;

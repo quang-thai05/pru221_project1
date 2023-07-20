@@ -198,7 +198,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e047375fb9f2bfe40b362a947c89bc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 4
 --- !u!114 &8888019668160220304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,8 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 7085159743521070294, guid: fb659a9bec055124fab38ba6e61b05b4, type: 3}
   barPosition: {fileID: 3821333469443222044}
-  initialHealth: 10
-  maxHealth: 10
+  initialHealth: 20
+  maxHealth: 30
   dealdamege: {fileID: 4134003592541395216}
   death: {fileID: 8300000, guid: fc0d5676cedb6584dbb154f77248cab8, type: 3}
 --- !u!114 &-3820530300602889673

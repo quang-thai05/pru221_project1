@@ -1,7 +1,4 @@
 ﻿using Assets.Scripts.SaveLoad;
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelManager : Singleton<LevelManager>
@@ -10,12 +7,12 @@ public class LevelManager : Singleton<LevelManager>
 
     public int TotalLives { get; set; }
     public int CurrentWave { get; set; }
-    
+
     private void Start()
     {
         TotalLives = lives;
         CurrentWave = 1;
-        if(PropertiesApplication.TotalLives != -10)
+        if (PropertiesApplication.TotalLives != -10)
         {
             TotalLives = PropertiesApplication.TotalLives;
             CurrentWave = PropertiesApplication.currentWave;
@@ -37,7 +34,7 @@ public class LevelManager : Singleton<LevelManager>
     {
         UIManager.Instance.ShowGameOverPanel();
     }
-    
+
     private void WaveCompleted()
     {
         CurrentWave++;
@@ -46,7 +43,7 @@ public class LevelManager : Singleton<LevelManager>
         AchievementManager.Instance.AddProgress("Waves50", 1);
         AchievementManager.Instance.AddProgress("Waves100", 1);
     }
-    
+
     private void OnEnable()
     {
         Enemy.OnEndReached += ReduceLives;
