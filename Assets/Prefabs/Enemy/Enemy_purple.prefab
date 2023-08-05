@@ -244,7 +244,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBarPrefab: {fileID: 7085159743521070294, guid: fb659a9bec055124fab38ba6e61b05b4, type: 3}
   barPosition: {fileID: 5967856438349231979}
-  initialHealth: 30
+  initialHealth: 100
   maxHealth: 100
   dealdamege: {fileID: -319106061190622769}
   death: {fileID: 8300000, guid: fc0d5676cedb6584dbb154f77248cab8, type: 3}

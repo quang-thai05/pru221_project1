@@ -1737,7 +1737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b23b9b3cab482b0448a1179cfebf94ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lives: 1
+  lives: 3
 --- !u!4 &566512532
 Transform:
   m_ObjectHideFlags: 0
@@ -12541,7 +12541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b09371f22bb5f4f94125f6d4e9f822, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinTest: 10
+  coinTest: 35
 --- !u!4 &1524564432
 Transform:
   m_ObjectHideFlags: 0
